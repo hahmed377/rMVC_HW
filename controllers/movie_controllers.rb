@@ -5,13 +5,9 @@ class MovieController < Sinatra::Base
 # sets the view directory correctly
   set :views, Proc.new { File.join(root, 'Views')}
 
-
-
-
-configure :development do
-  register Sinatra::Reloader
-end
-
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   $movies = [{
     id:0,
@@ -32,9 +28,7 @@ end
         id:3,
         title: "Mamma Mia! Here we go",
         description: "this is the fourth movie"
-        }
-      ]
-
+        }]
 
   get "/" do
     @title = "Hanad's movies"
@@ -50,15 +44,12 @@ end
       description: ""
     }
     erb :'movies/new'
-
-
   end
 
   # this will display a specific movies by calling a specific id number.
   get "/:id" do
     id = params[:id].to_i
     @movie = $movies[id]
-
     erb :'movies/show'
   end
 
@@ -78,9 +69,7 @@ end
     movie[:title] = params[:title]
     movie[:description] = params[:description]
     $movies[id] = movie
-
     redirect "/"
-
   end
 
   delete "/:id" do
@@ -96,10 +85,4 @@ end
     erb :'movies/edit'
 
   end
-
-
-
-
-
-
 end

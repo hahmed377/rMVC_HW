@@ -6,7 +6,6 @@ require 'pry'
 require_relative "./controllers/movie_controllers.rb"
 require 'Rack'
 # information goes into the body of the request
-# create our first route
 # get is request word
 use Rack::Reloader
 use Rack::MethodOverride
