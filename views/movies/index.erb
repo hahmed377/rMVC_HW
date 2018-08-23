@@ -1,0 +1,8 @@
+
+    <h1 align="center">Welcome to Hanad's Movies</h1>
+    <% @movies.each do |movie| %>
+      <div>
+        <h3><a href="<%= movie[:id] %>"><%= movie[:title] %></a></h3>
+        <p><%= movie[:description] %></p>
+      </div>
+    <% end %>
