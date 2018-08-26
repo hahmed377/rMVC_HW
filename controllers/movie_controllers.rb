@@ -10,14 +10,14 @@ class MovieController < Sinatra::Base
   end
 #
   $movies = [{
-    id:0,
+    id: 0,
     title: "Ant-Man and Wasp",
     description: "this is the first movie",
     image: "https://nerdist.com/wp-content/uploads/2018/07/ant-man-and-the-wasp-spoilers.jpg"
 
     },
     {
-      id:1,
+      id: 1,
       title: "Incredibles 2",
       description: "this is the second movie",
       image: "https://static.goldderby.com/wp-content/uploads/2018/06/Incredibles-2-Pixar-620x360.jpg"
@@ -37,56 +37,51 @@ class MovieController < Sinatra::Base
 
   get "/" do
     @title = "Hanad's movies"
-    @movies = $movies
+    @movies = Movie.all
     erb :'movies/index'
   end
 
   get "/new" do
     @title = "New"
-    @movie = {
-      id: "",
-      title: "",
-      description: ""
-    }
+    @movie = Post.new
     erb :'movies/new'
   end
 
   # this will display a specific movies by calling a specific id number.
   get "/:id" do
     id = params[:id].to_i
-    @movie = $movies[id]
+    @movie = Movie.find(id)
     erb :'movies/show'
   end
 
   post "/" do
-    new_movies = {
-      id: $movies.length,
-      title: params[:title],
-      description: params[:description]
-    }
-    $movies.push(new_movies)
+    movie = Movie.new
+    post.title = params[:title]
+    post.description = params[:description]
+    post.save
     redirect "/"
   end
 
   put "/:id" do
     id = params[:id].to_i
-    movie = $movies[id]
-    movie[:title] = params[:title]
-    movie[:description] = params[:description]
-    $movies[id] = movie
+
+    movie = Movie.find(id)
+    movie.title = params[:title]
+    movie.description = params[:description]
+    movie.save
     redirect "/"
   end
 
   delete "/:id" do
     id = params[:id].to_i
-    $movies.delete_at(id)
+    $movies = Movie.destory(id)
     redirect "/"
   end
 
   get "/:id/edit" do
     @title = "Edit"
     id = params[:id].to_i
-    @movie = $movies[id]
+    @movie = Movie.find(id)
     erb :'movies/edit'
 
   end

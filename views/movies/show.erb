@@ -1,8 +1,8 @@
-  <h1><%= @movie[:title] %></h1>
-  <p><%= @movie[:description] %></p>
-  <img src="<%= @movie[:image] %>" width="50%" height="50%" alt="">
-  <form action="/<%= @movie[:id] %>" method="POST">
+  <h1><%= @movie.title %></h1>
+  <p><%= @movie.description %></p>
+
+  <form action="/<%= @movie.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="DELETE">
   </form>
-  <a href="/<%= @movie[:id] %>/edit">Edit</a>
+  <a href="/<%= @movie.id %>/edit">Edit</a>
