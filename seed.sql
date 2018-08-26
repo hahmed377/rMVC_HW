@@ -10,7 +10,7 @@ CREATE TABLE movie (
 
 );
 
-INSERT INTO movie (title , description, year_released, img_url) VALUES ('Movie 1' , 'description 1','year_released','img_url');
-INSERT INTO movie (title , description, year_released, img_url) VALUES ('Movie 2' , 'description 2','year_released', 'img_url');
-INSERT INTO movie (title , description, year_released, img_url) VALUES ('Movie 3' , 'description 3','year_released', 'img_url');
-INSERT INTO movie (title , description, year_released, img_url) VALUES ('Movie 4' , 'description 4','year_released', 'img_url');
+INSERT INTO movie (title , description, year_released, img_url) VALUES ('Ant-Man and Wasp' , 'this is the first movie','2018','https://nerdist.com/wp-content/uploads/2018/07/ant-man-and-the-wasp-spoilers.jpg');
+INSERT INTO movie (title , description, year_released, img_url) VALUES ('Incredibles 2' , 'this is the second movie','2018', 'https://static.goldderby.com/wp-content/uploads/2018/06/Incredibles-2-Pixar-620x360.jpg');
+INSERT INTO movie (title , description, year_released, img_url) VALUES ('The spy who dumped me' , 'this is the third movie','year_released', 'https://cdn.flickeringmyth.com/wp-content/uploads/2018/06/Spy-Who-Dumped-Me-UK-poster-600x450.jpg');
+INSERT INTO movie (title , description, year_released, img_url) VALUES ('Mamma Mia! Here we go' , 'this is the fourth movie','year_released', 'https://www.hertfordtheatre.com/system/expressionengine/third_party/eventmanager/images/normals/mama_mia_quad.jpg');

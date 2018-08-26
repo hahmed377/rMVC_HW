@@ -54,7 +54,7 @@ class Movie
     movie.title = movie_data["title"]
     movie.description = movie_data["description"]
     movie.year_released = movie_data["year_released"]
-    movie.img_url = movie_data["image"]
+    movie.img_url = movie_data["img_url"]
 
     movie
   end
