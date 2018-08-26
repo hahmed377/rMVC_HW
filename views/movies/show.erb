@@ -1,6 +1,7 @@
   <h1><%= @movie.title %></h1>
   <p><%= @movie.description %></p>
-
+  <p><%= @movie.year_released %></p>
+  <img src="<%= @movie.img_url %>">
   <form action="/<%= @movie.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="DELETE">

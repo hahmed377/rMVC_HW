@@ -5,35 +5,12 @@ class MovieController < Sinatra::Base
 # sets the view directory correctly
   set :views, Proc.new { File.join(root, 'Views')}
   # this will set the configure that will allow the user to make changes while development without reset the reset.
+  # set :public, Proc.new {File.join(root, "Public")}
   configure :development do
     register Sinatra::Reloader
   end
-#
-  $movies = [{
-    id: 0,
-    title: "Ant-Man and Wasp",
-    description: "this is the first movie",
-    image: "https://nerdist.com/wp-content/uploads/2018/07/ant-man-and-the-wasp-spoilers.jpg"
 
-    },
-    {
-      id: 1,
-      title: "Incredibles 2",
-      description: "this is the second movie",
-      image: "https://static.goldderby.com/wp-content/uploads/2018/06/Incredibles-2-Pixar-620x360.jpg"
-    },
-      {
-        id:2,
-        title: "The spy who dumped me",
-        description: "this is the third movie",
-        image: "https://cdn.flickeringmyth.com/wp-content/uploads/2018/06/Spy-Who-Dumped-Me-UK-poster-600x450.jpg"
-      },
-      {
-        id:3,
-        title: "Mamma Mia! Here we go",
-        description: "this is the fourth movie",
-        image: "https://www.hertfordtheatre.com/system/expressionengine/third_party/eventmanager/images/normals/mama_mia_quad.jpg"
-        }]
+
 
   get "/" do
     @title = "Hanad's movies"
@@ -43,7 +20,7 @@ class MovieController < Sinatra::Base
 
   get "/new" do
     @title = "New"
-    @movie = Post.new
+    @movie = Movie.new
     erb :'movies/new'
   end
 
@@ -56,9 +33,11 @@ class MovieController < Sinatra::Base
 
   post "/" do
     movie = Movie.new
-    post.title = params[:title]
-    post.description = params[:description]
-    post.save
+    movie.title = params[:title]
+    movie.description = params[:description]
+    movie.year_released = params[:year_released]
+    movie.img_url = params[:img_url]
+    movie.save
     redirect "/"
   end
 
@@ -68,6 +47,8 @@ class MovieController < Sinatra::Base
     movie = Movie.find(id)
     movie.title = params[:title]
     movie.description = params[:description]
+    movie.year_released = params[:year_released]
+    movie.img_url = params[:img_url]
     movie.save
     redirect "/"
   end
