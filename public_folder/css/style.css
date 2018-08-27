@@ -1,0 +1,33 @@
+body{
+  background-image: url('images/movie.jpg');
+  background-size: cover;
+}
+h1{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: 'Kaushan Script', cursive;
+}
+.navbar {
+  background-color: #4d4d4d;
+}
+.right {
+  float: right;
+  font-size: 30px;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  text-decoration: none;
+}
+.title{
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Kaushan Script', cursive;
+}
+.gif{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 400px;
+}

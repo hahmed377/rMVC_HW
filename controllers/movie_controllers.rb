@@ -5,7 +5,7 @@ class MovieController < Sinatra::Base
 # sets the view directory correctly
   set :views, Proc.new { File.join(root, 'Views')}
   # this will set the configure that will allow the user to make changes while development without reset the reset.
-  set :public, Proc.new {File.join(root, "Public")}
+  set :public_folder, Proc.new {File.join(root, "public_folder")}
   configure :development do
     register Sinatra::Reloader
   end

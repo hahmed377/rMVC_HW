@@ -1,19 +1,19 @@
 <form action="/<%= @movie.id %>" method="POST">
   <div>
-    <label>Title</label>
+
     <input type="text" name="title" placeholder="Enter a title" value="<%= @movie.title %>">
   </div>
   <div>
-    <label>Body</label>
+
     <textarea name="description" placeholder="The body of the text"><%= @movie.description %></textarea>
   </div>
   <div>
-      <label>year_released</label>
+
       <textarea name="year_released" placeholder="Year of release"><%= @movie.year_released %></textarea>
   </div>
   <div>
-      <label>Add image url</label>
-      <input type="img_url" placeholder="Add url of image" value= "<%= @movie.img_url %>">
+      
+      <input type="text" name="img_url" placeholder="Add url of image" value= "<%= @movie.img_url %>">
   </div>
   <div>
     <input type="submit" value= "save movie">

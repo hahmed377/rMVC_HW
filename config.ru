@@ -7,7 +7,6 @@ require 'pg'
 require_relative "./models/movies.rb"
 # require_relative "./public/style.css"
 require_relative "./controllers/movie_controllers.rb"
-require 'Rack'
 # information goes into the body of the request
 # get is request word
 use Rack::Reloader
