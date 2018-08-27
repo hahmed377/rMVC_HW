@@ -1,9 +1,17 @@
-  <h1 class = "title"><%= @movie.title %></h1>
-  <p><%= @movie.description %></p>
-  <p><%= @movie.year_released %></p>
-  <form action="/<%= @movie.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="DELETE">
-  </form>
-  <a href="/<%= @movie.id %>/edit">Edit</a>
-    <img src="<%= @movie.img_url %>" alt="not found">
+<div id="show"class="row">
+  <div class="col-md-12">
+    <h1 class = "title"><%= @movie.title %></h1>
+    <p><%= @movie.description %></p>
+    <p><%= @movie.year_released %></p>
+  </div>
+</div>
+  <div class="row fluid">
+    <div class="col-md-6">
+      <img class="image"src="<%= @movie.img_url %>" alt="not found">
+      <form action="/<%= @movie.id %>" method="POST">
+        <a class="edit"href="/<%= @movie.id %>/edit">Edit</a>
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="delete"type="submit" value="DELETE">
+      </form>
+    </div>
+  </div>

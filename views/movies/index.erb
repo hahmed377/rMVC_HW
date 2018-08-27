@@ -1,18 +1,16 @@
 <h1 align="center">Welcome to Hanad's Movies</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <% @movies.each do |movie| %>
-          <h3><a href="<%= movie.id %>"><%= movie.title %></a></h3>
-          <p><%= movie.description %></p>
-          <p><%= movie.year_released %></p>
-        </div>
-        <% end %>
-        <div class="col-lg-4">
-          <img class="gif" src="css/images/classic.gif" alt="not found">
-        </div>
-        <div class="col-lg-4">
-          <p class="intrusctions">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
-    </div>
+<div class="container-fluid">
+
+<div class="row">
+  <div class="index col-md-12">
+    <img class="gif" src="css/images/classic.gif" alt="not found">
+  <% @movies.each do |movie| %>
+    <h3><a href="<%= movie.id %>"><%= movie.title %></a></h3>
+      <p><%= movie.description %></p>
+      <p><%= movie.year_released %></p>
+      <% end %>
+
+  </div>
+
+  </div>
+</div>
