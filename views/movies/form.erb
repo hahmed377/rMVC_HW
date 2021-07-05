@@ -1,0 +1,18 @@
+<div class="form">
+
+<form action="/<%= @movie.id %>" method="POST">
+
+    <input type="text" name="title" placeholder="Enter a title" value="<%= @movie.title %>">
+
+    <textarea name="description" placeholder="The body of the text"><%= @movie.description %></textarea>
+
+      <textarea name="year_released" placeholder="Year of release"><%= @movie.year_released %></textarea>
+
+      <input type="text" name="img_url" placeholder="Add url of image" value= "<%= @movie.img_url %>">
+    <input class="button"type="submit" value= "save movie">
+  <% if(@movie.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
+
+</div>

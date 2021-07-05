@@ -1,0 +1,16 @@
+<h1 align="center">Welcome to Hanad's Movies</h1>
+<div class="container-fluid">
+
+<div class="row">
+  <div class="index col-md-12">
+    <img class="gif" src="css/images/classic.gif" alt="not found">
+  <% @movies.each do |movie| %>
+    <h3><a href="<%= movie.id %>"><%= movie.title %></a></h3>
+      <p><%= movie.description %></p>
+      <p><%= movie.year_released %></p>
+      <% end %>
+
+  </div>
+
+  </div>
+</div>
